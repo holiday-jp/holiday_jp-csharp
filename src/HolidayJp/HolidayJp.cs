@@ -38,8 +38,6 @@ namespace HolidayJp
             {
                 yield return null;
             }
-            var s = start.ToString("yyyy-MM-dd");
-            var e = end.ToString("yyyy-MM-dd");
             foreach (var date in start.RangeTo(end))
             {
                 var strD = date.ToString("yyyy-MM-dd");
@@ -64,14 +62,14 @@ namespace HolidayJp
         public static bool IsHoliday(DateTime somedate)
         {
             var strD = somedate.ToString("yyyy-MM-dd");
-            return _holidays.ContainsKey(strD); 
+            return _holidays.ContainsKey(strD);
         }
 
         public static bool TryGet(DateTime somedate, out Holiday holiday)
         {
             holiday = null;
             var strD = somedate.ToString("yyyy-MM-dd");
-            if(_holidays.ContainsKey(strD))
+            if (_holidays.ContainsKey(strD))
             {
                 holiday = _holidays[strD];
                 return true;

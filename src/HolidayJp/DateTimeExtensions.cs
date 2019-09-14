@@ -11,7 +11,6 @@ namespace HolidayJp
             {
                 step = x => x.AddDays(1);
             }
-
             while (from <= to)
             {
                 yield return from;
