@@ -1,7 +1,39 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
+  <PropertyGroup Condition=" '$(OS)' != 'Windows_NT' ">
     <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(OS)' == 'Windows_NT' ">
+    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <authors>codeyu</authors>
+    <AssemblyName>HolidayJp</AssemblyName>
+    <PackageId>HolidayJp</PackageId>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Copyright>Copyright 2019 © codeyu</Copyright>
+    <title>.NET HolidayJp</title>
+    <owners>codeyu</owners>
+    <Description>Japanese holiday datasets</Description>
+    <PackageTags>HolidayJp Holiday Japan</PackageTags>
+    <PackageReleaseNotes>
+      1.0.0
+      - init release.
+    </PackageReleaseNotes>
+    <PackageLicense>https://github.com/codeyu/holiday_jp-csharp/master/LICENSE</PackageLicense>
+    <PackageProjectUrl>https://github.com/codeyu/holiday_jp-csharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/codeyu/holiday_jp-csharp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="..\..\data\holidays_detailed.json" />
