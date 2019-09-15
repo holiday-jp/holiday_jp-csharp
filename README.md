@@ -35,8 +35,8 @@ Console.WriteLine(isHoliday) //true
 ```
 
 ```cs
-var Holiday holiday;
-var holiday = HolidayJp.TryGet(DateTime.Parse('2019-09-16'), out holiday);
+Holiday holiday;
+var holiday = HolidayJp.TryGet(new Date('2019-09-16'), out holiday);
 Console.WriteLine(holiday.Name) //敬老の日
 ```
 
