@@ -22,6 +22,6 @@ with open(holiday_file_yml,'r', encoding='UTF-8') as f:
     print(yaml.safe_load(f))
 
 with open(holiday_file_csv,'r', encoding='Shift_JIS') as csvfile:
-    csv_reader = csv.reader(csvfile)  # 使用csv.reader读取csvfile中的文件
-    for row in csv_reader:  # 将csv 文件中的数据保存到birth_data中
+    csv_reader = csv.reader(csvfile) 
+    for row in csv_reader: 
         print(row)
