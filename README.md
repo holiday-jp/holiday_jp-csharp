@@ -20,7 +20,7 @@ dotnet add package HolidayJp
 ## Usage
 
 ```cs
-var holidays = HolidayJp.Between(new Date('2019-09-14'), new Date('2019-09-21'));
+var holidays = HolidayJp.Between(DateTime.Parse('2019-09-14'), DateTime.Parse('2019-09-21'));
 Console.WriteLine(holidays[0].Name) //敬老の日
 ```
 
@@ -30,15 +30,21 @@ Console.WriteLine(holidays[0].Name) //敬老の日
 ```
 
 ```cs
-var isHoliday = HolidayJp.IsHoliday(new Date('2019-09-16'));
+var isHoliday = HolidayJp.IsHoliday(DateTime.Parse('2019-09-16'));
 Console.WriteLine(isHoliday) //true
 ```
 
 ```cs
 var Holiday holiday;
-var holiday = HolidayJp.TryGet(new Date('2019-09-16'), out holiday);
+var holiday = HolidayJp.TryGet(DateTime.Parse('2019-09-16'), out holiday);
 Console.WriteLine(holiday.Name) //敬老の日
 ```
+
+## Test by syukujitsu.csv
+
+[syukujitsu.csv](data/syukujitsu.csv)
+
+出典：[内閣府ホームページ] ( https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html )
 
 ## License
 
