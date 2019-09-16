@@ -11,7 +11,7 @@ namespace HolidayJp
     {
         private static readonly Dictionary<string, Holiday> _holidays;
         private const int MaxYear = 2050;
-        private const int MinYear = 1970;
+        private const int MinYear = 1955;
         static HolidayJp()
         {
             try
