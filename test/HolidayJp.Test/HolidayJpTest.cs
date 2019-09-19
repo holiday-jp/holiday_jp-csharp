@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Xunit;
 
 namespace HolidayJp.Test
@@ -42,6 +43,13 @@ namespace HolidayJp.Test
             var result = HolidayJp.TryGet(somedate, out holiday);
             Assert.True(result);
             Assert.NotNull(holiday);
+        }
+
+        [Fact]
+        public void TestThisWeek()
+        {
+            var result = HolidayJp.ThisWeek(StartOfWeek.Monday);
+            Assert.True(result.Count() > 0);
         }
     }
 }
